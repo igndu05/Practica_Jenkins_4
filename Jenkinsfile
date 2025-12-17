@@ -1,15 +1,13 @@
 pipeline {
     agent any
 
-    environment {
-        PATH = "/home/usuario/.nvm/versions/node/v25.2.1/bin:$PATH"
+     tools {
+        nodejs 'node'
     }
 
     stages {
-
         stage('Verify npm and node') {
             steps {
-                echo 'Verifying tools...'
                 sh 'node -v'
                 sh 'npm -v'
             }
